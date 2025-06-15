@@ -50,7 +50,7 @@ Amacı, kullanıcıların kendi araçlarına yaptıkları modifiyeleri kayıt al
 
 ## 🎥 Tanıtım Videosu
 
-📹 [Tanıtım Videosunu Buradan İzleyin](https://drive.google.com/your-video-link)
+📹 [Tanıtım Videosunu Buradan İzleyin](https://youtu.be/Ok39Bgu-G5I?si=L3AnRoob_AMAt-fr)
 
 ---
 
