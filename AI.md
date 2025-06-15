@@ -9,7 +9,9 @@ PHP'de güvenli bir kullanıcı girişi nasıl yapılır? Şifreleri nasıl hash
 **Yanıt:**
 
 password_hash() fonksiyonu ile Şifreler hash’lenip veritabanına güvenli şekilde kaydedilir. Giriş sırasında password_verify() fonksiyonu ile karşılaştırma yapılır.
+```php
 $hashed_password = password_hash($_POST['password'], PASSWORD_DEFAULT); if (password_verify($_POST['password'], $storedHash)) { $_SESSION['user_id'] = $row['id']; }
+```
 
 ---
 ### Veritabanı Tasarımı
@@ -21,7 +23,9 @@ Modifiye işlemlerini kullanıcılarla ilişkilendirmek için nasıl bir tablo y
 **Yanıt:**
 
 İki tablo kullanılmalıdır: kullanicilar ve modifiyeler. Aralarında foreign key ile ilişki kurulmalı:
-CREATE TABLE modifiyeler ( id INT AUTO_INCREMENT PRIMARY KEY, user_id INT, modname VARCHAR(100), details TEXT, FOREIGN KEY (user_id) REFERENCES kullanicilar(id) ); 
+```
+CREATE TABLE modifiyeler ( id INT AUTO_INCREMENT PRIMARY KEY, user_id INT, modname VARCHAR(100), details TEXT, FOREIGN KEY (user_id) REFERENCES kullanicilar(id) );
+```
 
 ---
 ### Dosya Yapısı ve Organizasyon
@@ -62,7 +66,9 @@ Giriş yapılmadan sayfalara erişimi nasıl engellerim?
 **Yanıt:**
 
 Sayfa başına şu kod eklenmelidir:
-session_start(); if (!isset($_SESSION["user_id"])) { header("Location: login.php"); exit; } 
+```php
+session_start(); if (!isset($_SESSION["user_id"])) { header("Location: login.php"); exit; }
+```
 
 ---
 ### Arayüz ve Tasarım
@@ -85,7 +91,9 @@ PHP ile güvenli CRUD işlemleri nasıl yapılır?
 **Yanıt:**
 
 Veritabanı işlemleri için mysqli ve prepared statements kullanıldı:
-$stmt = $conn->prepare("INSERT INTO modifiyeler (user_id, modname, details) VALUES (?, ?, ?)"); $stmt->bind_param("iss", $user_id, $modname, $details); $stmt->execute(); 
+```php
+$stmt = $conn->prepare("INSERT INTO modifiyeler (user_id, modname, details) VALUES (?, ?, ?)"); $stmt->bind_param("iss", $user_id, $modname, $details); $stmt->execute();
+```
 
 ---
 ### Form Doğrulama ve Uyarı Mesajları
@@ -96,7 +104,10 @@ Kullanıcı boş alan bırakırsa nasıl uyarı verebilirim?
 
 **Yanıt:**
 
-if (empty($_POST['modname']) || empty($_POST['details'])) { $error = "Tüm alanları doldurmanız gerekmektedir."; } 
+
+```php
+if (empty($_POST['modname']) || empty($_POST['details'])) { $error = "Tüm alanları doldurmanız gerekmektedir."; }
+```
 
 ---
 ### PHP Hata Ayıklama
@@ -108,7 +119,9 @@ Beyaz ekran alıyorum, hataları nasıl görebilirim?
 **Yanıt:**
 
 Kodun en üstüne şu satırları ekleyin:
-ini_set('display_errors', 1); ini_set('display_startup_errors', 1); error_reporting(E_ALL); 
+```php
+ini_set('display_errors', 1); ini_set('display_startup_errors', 1); error_reporting(E_ALL);
+```
 
 ---
 ### Yönlendirme ve Bilgi Mesajları
@@ -120,9 +133,11 @@ Silme veya ekleme sonrası kullanıcıya bilgi mesajı göstermek istiyorum.
 **Yanıt:**
 
 Session üzerinden mesaj taşıyarak yapılabilir:
+```php
 $_SESSION["message"] = "Silme işlemi başarılı."; header("Location: index.php"); 
 Ve hedef sayfada:
-if (isset($_SESSION["message"])) { echo "<div class='alert alert-info'>" . $_SESSION["message"] . "</div>"; unset($_SESSION["message"]); } 
+if (isset($_SESSION["message"])) { echo "<div class='alert alert-info'>" . $_SESSION["message"] . "</div>"; unset($_SESSION["message"]); }
+```
 
 ---
 ### Canlı Ortam ve Yayınlama
