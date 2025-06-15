@@ -1,5 +1,4 @@
-# Etkileşim Konuları ve Detaylı Soru-Cevaplar
-
+# GELİŞTİRME SÜRECİ CHATGPT DANIŞMALARI
 ### Kullanıcı Girişi ve Şifreleme
 
 **Soru:**
