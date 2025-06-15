@@ -41,10 +41,10 @@ Amacı, kullanıcıların kendi araçlarına yaptıkları modifiyeleri kayıt al
 ## 🖼 Ekran Görüntüleri
 
 ### 🔐 Giriş Sayfası  
-![Login](ekran1.png)
+![Giriş Ekranı](screenshots/giris_ekrani.png)
 
-### 📋 Modifiye Listesi  
-![Liste](ekran2.png)
+### 📋 Modifiye Sayfası  
+![Modifiye Ekranı](screenshots/modifiye_ekrani.png)
 
 ---
 
