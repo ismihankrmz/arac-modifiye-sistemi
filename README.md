@@ -65,7 +65,7 @@ Bursa Teknik Üniversitesi
 ## 🤖 AI.md Nedir?
 
 Bu projede geliştirici, *ChatGPT* gibi yapay zekâ araçlarından destek almıştır.  
-Tüm bu etkileşimler AI.md dosyasında dokümante edilmiştir.  
+Tüm bu etkileşimler [Yapay Zeka Kullanımları](AI.md) dosyasında dokümante edilmiştir.  
 Yalnızca yardımcı araç olarak kullanılmış, özgün içerik geliştirilmiştir.
 
 ---
